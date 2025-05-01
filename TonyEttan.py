@@ -19,7 +19,8 @@ intents.presences = True
 
 # Create the bot instance with the specified intents
 bot = commands.Bot(command_prefix="/", intents=intents)
-
+async def ping(ctx):
+    await ctx.send("Pong!")
 # Event: When the bot is ready
 @bot.event
 async def on_ready():
