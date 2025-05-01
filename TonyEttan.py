@@ -23,7 +23,21 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 # Event: When the bot is ready
 @bot.event
 async def on_ready():
-    print(f"Bot is logged in as {bot.user}")
+    print(f"✅ Bot is logged in as {bot.user}")
 
-# Start the bot using the token
+# Event: When a new member joins the server
+@bot.event
+async def on_member_join(member):
+    print(f"👋 New member joined: {member.display_name}")
+
+    try:
+        await member.send(
+            f"Hey {member.display_name}, welcome to The Arcane Circle! 🎉\n"
+            "Please introduce yourself in the #self-intro channel and explore the community. 😊"
+        )
+        print(f"✅ Welcome message sent to {member.display_name}")
+    except discord.Forbidden:
+        print(f"⚠️ Could not send DM to {member.display_name}. They may have DMs disabled.")
+
+# Run the bot
 bot.run(TOKEN)
