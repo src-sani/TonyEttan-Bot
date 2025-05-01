@@ -18,7 +18,7 @@ intents.members = True
 intents.presences = True
 
 # Create the bot instance with the specified intents
-bot = commands.Bot(command_prefix="/", intents=intents)
+bot = commands.Bot(command_prefix="!", intents=intents)
 async def on_ready():
     print(f"Bot is logged in as {bot.user}")
     for guild in bot.guilds:
