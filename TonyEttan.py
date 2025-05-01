@@ -36,8 +36,8 @@ async def on_member_join(member):
             "Please introduce yourself in the #self-intro channel and explore the community. 😊"
         )
         print(f"✅ Welcome message sent to {member.display_name}")
-     except Exception as e:
-         print(f"❌ Could not send DM to {member}: {e}")
+    except discord.Forbidden:
+        print(f"⚠️ Could not send DM to {member.display_name}. They may have DMs disabled.")
 
 # Run the bot
 bot.run(TOKEN)
