@@ -40,8 +40,8 @@ async def on_member_join(member):
 
     try:
         await member.send(
-            f"Hey {member.display_name}, welcome to The Arcane Circle! 🎉\n"
-            "Please introduce yourself in the #self-intro channel and explore the community. 😊Appo enganaa!!! Polikkaa alleee??🥳"
+            f"Hey {member.display_name}, welcome to The Arcane Circle! 🎉\n
+            Please introduce yourself in the #self-intro channel and explore the community. 😊Appo enganaa!!! Polikkaa alleee??🥳"
         )
         print(f"✅ Welcome message sent to {member.display_name}")
     except discord.Forbidden:
