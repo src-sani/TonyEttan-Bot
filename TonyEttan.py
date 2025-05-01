@@ -37,7 +37,7 @@ async def on_member_join(member):
         )
         print(f"✅ Welcome message sent to {member.display_name}")
      except Exception as e:
-        print(f"❌ Could not send DM to {member}: {e}")
+         print(f"❌ Could not send DM to {member}: {e}")
 
 # Run the bot
 bot.run(TOKEN)
