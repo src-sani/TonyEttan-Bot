@@ -19,16 +19,19 @@ intents.presences = True
 
 # Create the bot instance with the specified intents
 bot = commands.Bot(command_prefix="!", intents=intents)
-async def on_ready():
-    print(f"Bot is logged in as {bot.user}")
-    for guild in bot.guilds:
-        print(f"Connected to: {guild.name} (id: {guild.id})")
-async def ping(ctx):
-    await ctx.send("Pong!")
+
 # Event: When the bot is ready
 @bot.event
 async def on_ready():
     print(f"✅ Bot is logged in as {bot.user}")
+    # Optional: Print connected servers (guilds)
+    for guild in bot.guilds:
+        print(f"Connected to: {guild.name} (id: {guild.id})")
+
+# Ping command (for testing purposes)
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
 
 # Event: When a new member joins the server
 @bot.event
