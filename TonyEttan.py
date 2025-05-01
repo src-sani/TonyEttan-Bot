@@ -47,5 +47,5 @@ async def on_member_join(member):
     else:
         print("Category not found!")  # Debugging: Category not found
 
-bot.run(TOKEN)
+bot.run(os.getenv('TOKEN'))
 
