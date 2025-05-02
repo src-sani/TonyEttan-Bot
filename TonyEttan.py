@@ -46,26 +46,7 @@ async def on_member_join(member):
         print(f"✅ Welcome message sent to {member.display_name}")
     except discord.Forbidden:
         print(f"⚠️ Could not send DM to {member.display_name}. They may have DMs disabled.")
-@bot.event
-async def on_member_join(member):
-    guild = member.guild
-    system_channel = guild.system_channel
 
-    # Try to find a fallback channel if system_channel is None
-    if system_channel is None:
-        # Replace 'general' with any known welcome/default channel in your server
-        system_channel = discord.utils.get(guild.text_channels, name='system-messages')
-
-    council_role = discord.utils.get(guild.roles, name="COUNCIL")  # Make sure role name matches exactly
-
-    if system_channel and council_role:
-        await system_channel.send(
-            f"🎉 {member.mention} just joined the server!\n"
-            f"{council_role.mention}, please welcome our new member!"
-        )
-        print(f"✅ Welcome message sent in {system_channel.name} for {member.display_name}")
-    else:
-        print("⚠️ Could not find system channel or Council role.")
 
 
 # Run the bot
