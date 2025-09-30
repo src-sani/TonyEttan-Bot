@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+from keep_alive import keep_alive
+
+keep_alive()  # Starts the Flask server
 
 # Load environment variables from .env file
 load_dotenv()
